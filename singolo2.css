@@ -91,13 +91,13 @@ body{
     font-size: 18px;
     line-height: 30px;
     font-weight: 300;
-    margin-bottom: 9px;
+    margin-bottom: 10px;
 }
 
 .tags-container{
     margin: 0;
     padding: 0;
-    margin-bottom: 20px;
+    margin-bottom: 19px;
 }
 
 .tags-container button{
@@ -164,23 +164,23 @@ body{
 }
 
 .four-column-layout li:not(:nth-child(n+8)){
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 }
 
 .four-column-layout li:nth-child(5){
-    margin-bottom: 17px;
+    margin-bottom: 18px;
 }
 
 .four-column-layout li:nth-child(6){
-    margin-bottom: 17px;
+    margin-bottom: 18px;
 }
 
 .four-column-layout li:nth-child(7){
-    margin-bottom: 17px;
+    margin-bottom: 18px;
 }
 
 .four-column-layout li:nth-child(8){
-    margin-bottom: 17px;
+    margin-bottom: 18px;
 }
 
 .portfolio-line{
@@ -188,4 +188,86 @@ body{
     width: 1020px;
     margin: 0 auto;
     background-color: #323746;
+}
+
+
+/* About Us */
+
+
+.about-us{
+    height: 604px;
+    max-width: 940px;
+    padding: 62px 40px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+}
+
+.three-column-layout{
+    display: flex;
+    flex-direction: row;
+}
+
+.about-us h2{
+    font-size: 30px;
+    font-weight: 900;
+    color: #666d89;
+    margin-bottom: 18px;
+}
+
+.about-us p{
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 29px;
+    color: #767e9e;
+    margin-bottom: 45px;
+    text-align: justify;
+}
+
+.about-us__member:not(:last-child){
+    margin-right: 20px;
+}
+
+.about-us__member h3{
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 18px;
+    color: #666d89;
+    margin-top: 14px;
+    margin-bottom: 10px;
+    max-width: 300px;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.about-us__member p{
+    max-width: 300px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+    color: #767e9e;
+    margin-bottom: 22px;
+    text-align: justify;
+}
+
+.about-us__social-buttons ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.about-us__social-buttons ul li a:not(:first-child){
+    margin-left: 5px;   
+}
+
+.about-us__social-buttons ul li a:hover{
+    opacity: 0.5;
+}
+
+.about-us-line{
+    width: 1020px;
+    height: 6px;
+    margin: 0 auto;
+    background-color: #ffffff;
 }
