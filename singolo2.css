@@ -1,0 +1,191 @@
+/* Fonts */
+
+/* lato-300 - latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 300;
+    src: url('assets/fonts/lato-v16-latin-300.eot'); /* IE9 Compat Modes */
+    src: local('Lato Light'), local('Lato-Light'),
+         url('assets/fonts/lato-v16-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('assets/fonts/lato-v16-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+         url('assets/fonts/lato-v16-latin-300.woff') format('woff'), /* Modern Browsers */
+         url('assets/fonts/lato-v16-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('assets/fonts/lato-v16-latin-300.svg#Lato') format('svg'); /* Legacy iOS */
+  }
+  /* lato-regular - latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url('assets/fonts/lato-v16-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Lato Regular'), local('Lato-Regular'),
+         url('assets/fonts/lato-v16-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('assets/fonts/lato-v16-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('assets/fonts/lato-v16-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('assets/fonts/lato-v16-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('assets/fonts/lato-v16-latin-regular.svg#Lato') format('svg'); /* Legacy iOS */
+  }
+  /* lato-700 - latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: url('assets/fonts/lato-v16-latin-700.eot'); /* IE9 Compat Modes */
+    src: local('Lato Bold'), local('Lato-Bold'),
+         url('assets/fonts/lato-v16-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('assets/fonts/lato-v16-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('assets/fonts/lato-v16-latin-700.woff') format('woff'), /* Modern Browsers */
+         url('assets/fonts/lato-v16-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('assets/fonts/lato-v16-latin-700.svg#Lato') format('svg'); /* Legacy iOS */
+  }
+  /* lato-900 - latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: url('assets/fonts/lato-v16-latin-900.eot'); /* IE9 Compat Modes */
+    src: local('Lato Black'), local('Lato-Black'),
+         url('assets/fonts/lato-v16-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('assets/fonts/lato-v16-latin-900.woff2') format('woff2'), /* Super Modern Browsers */
+         url('assets/fonts/lato-v16-latin-900.woff') format('woff'), /* Modern Browsers */
+         url('assets/fonts/lato-v16-latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('assets/fonts/lato-v16-latin-900.svg#Lato') format('svg'); /* Legacy iOS */
+  }
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Portfolio */
+
+.portfolio{
+    max-width: 940px;
+    width: 100%;
+    height: 804px;
+    margin: 0 auto;
+    background-color: #2d303a;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 60px;
+}
+
+.portfolio h2{
+    font-size: 30px;
+    color: #666d89;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.portfolio p{
+    color: #767e9e;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 300;
+    margin-bottom: 9px;
+}
+
+.tags-container{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.tags-container button{
+    color: #767e9e;
+    font-size: 12px;
+    line-height: 12px;
+    display: inline-block;
+    border: 1px solid #767e9e;
+    border-radius: 5px;
+    background-color: #2d303a;
+    cursor: pointer;
+}
+
+.tags-container button:first-child{
+    padding: 4px 7px;
+}
+
+.tags-container button:nth-child(2){
+    padding: 5px;
+    margin-left: 9px;
+}
+
+.tags-container button:nth-child(3){
+    padding: 5px 4px;
+    margin-left: 8px;
+}
+
+.tags-container button:last-child{
+    padding: 5px 6px;
+    margin-left: 7px;
+}
+
+.tags-container button:hover{
+    color: #dedede;
+    border-color: #dedede;
+}
+
+.tags-container .tag-selected{
+    color: #dedede;
+    border-color: #dedede;
+}
+
+.four-column-layout{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 940px;
+    width: 100%;
+    max-height: 600px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.four-column-layout li img{
+    width: 220px;
+    height: 187px;
+}
+
+.four-column-layout li:not(:nth-child(4n)){
+    margin-right: 20px;
+}
+
+.four-column-layout li:not(:nth-child(n+8)){
+    margin-bottom: 18px;
+}
+
+.four-column-layout li:nth-child(5){
+    margin-bottom: 17px;
+}
+
+.four-column-layout li:nth-child(6){
+    margin-bottom: 17px;
+}
+
+.four-column-layout li:nth-child(7){
+    margin-bottom: 17px;
+}
+
+.four-column-layout li:nth-child(8){
+    margin-bottom: 17px;
+}
+
+.portfolio-line{
+    height: 6px;
+    width: 1020px;
+    margin: 0 auto;
+    background-color: #323746;
+}
