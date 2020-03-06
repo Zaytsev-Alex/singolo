@@ -1,0 +1,251 @@
+/* Fonts */
+
+/* lato-300 - latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 300;
+    src: url('assets/fonts/lato-v16-latin-300.eot'); /* IE9 Compat Modes */
+    src: local('Lato Light'), local('Lato-Light'),
+         url('assets/fonts/lato-v16-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('assets/fonts/lato-v16-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+         url('assets/fonts/lato-v16-latin-300.woff') format('woff'), /* Modern Browsers */
+         url('assets/fonts/lato-v16-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('assets/fonts/lato-v16-latin-300.svg#Lato') format('svg'); /* Legacy iOS */
+  }
+  /* lato-regular - latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url('assets/fonts/lato-v16-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Lato Regular'), local('Lato-Regular'),
+         url('assets/fonts/lato-v16-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('assets/fonts/lato-v16-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('assets/fonts/lato-v16-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('assets/fonts/lato-v16-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('assets/fonts/lato-v16-latin-regular.svg#Lato') format('svg'); /* Legacy iOS */
+  }
+  /* lato-700 - latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: url('assets/fonts/lato-v16-latin-700.eot'); /* IE9 Compat Modes */
+    src: local('Lato Bold'), local('Lato-Bold'),
+         url('assets/fonts/lato-v16-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('assets/fonts/lato-v16-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('assets/fonts/lato-v16-latin-700.woff') format('woff'), /* Modern Browsers */
+         url('assets/fonts/lato-v16-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('assets/fonts/lato-v16-latin-700.svg#Lato') format('svg'); /* Legacy iOS */
+  }
+  /* lato-900 - latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: url('assets/fonts/lato-v16-latin-900.eot'); /* IE9 Compat Modes */
+    src: local('Lato Black'), local('Lato-Black'),
+         url('assets/fonts/lato-v16-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('assets/fonts/lato-v16-latin-900.woff2') format('woff2'), /* Super Modern Browsers */
+         url('assets/fonts/lato-v16-latin-900.woff') format('woff'), /* Modern Browsers */
+         url('assets/fonts/lato-v16-latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('assets/fonts/lato-v16-latin-900.svg#Lato') format('svg'); /* Legacy iOS */
+  }
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.form{
+    width: 940px;
+    padding: 51px 40px 3px;
+    background-color: #f06c64;
+    margin: 0 auto;
+}
+
+.form h2{
+    font-weight: 900;
+    font-size: 30px;
+    color: #f0d8d9;
+    margin-bottom: 20px;
+    margin-top: 7px;
+}
+
+.form h2 + p{
+    font-weight: 300;
+    font-size: 18px;
+    color: #f0d8d9;
+    text-align: justify;
+    line-height: 30px;
+    margin-bottom: 43px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 620px;
+    height: 428px;
+}
+
+form input{
+    height: 8px;
+    margin-bottom: 16px;
+}
+
+form input,
+form textarea{
+    padding: 15px;
+    border-radius: 4px;
+    background-color: #d6564f;
+    border: none;
+    font-family: 'Lato', sans-serif;
+    color: #ffffff;
+}
+
+form textarea{
+    height: 200px;
+    padding-top: 10px;
+}
+
+form input::placeholder,
+form textarea::placeholder{
+    color: #f48c8f;
+    font-size: 12px;
+}
+
+form textarea{
+    resize: none;
+}
+
+form .submit{
+    color: #f48c8f;
+    background-color: #d6564f;
+    font-weight: 600;
+    margin: 0;
+    align-self: flex-end;
+    width: 100px;
+    height: 50px;
+    padding: 15px;
+    margin-top: 16px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease-out;
+    transition: color 0.2s ease-out;
+    font-family: 'Lato', sans-serif;
+}
+
+form .submit:hover{
+    background-color: #f0d8d9;
+    color: #d6564f;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.ContactInfo{
+    width: 300px;
+    height: 195px;
+    margin-left: 20px;
+}
+
+.ContactInfo h3{
+    font-weight: 900;
+    font-size: 18px;
+    color: #f0d8d9;
+    margin-bottom: 17px;
+}
+
+.ContactInfo h3 + p{
+    font-size: 12px;
+    line-height: 21.56px;
+    font-weight: normal;
+    color: #f0d8d9;
+    margin-bottom: 30px;
+}
+
+.contact-details{
+    color: #f0d8d9;
+    line-height: 21.56px;
+    font-size: 12px;
+}
+
+.contact-details a{
+    color: #f0d8d9;
+    text-decoration: none;
+    transition: color 0.1s ease-out;
+}
+
+.contact-details a:hover{
+    text-decoration: underline;
+    color: #ffbbaa;
+}
+
+.contact-details p:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.contact-details span{
+    display: inline-block;
+}
+
+.contact-location{
+    width: 7px;
+    height: 11px;
+    margin-right: 13px;
+    background-image: url("assets/image/form/location.png");
+}
+
+.contact-phone{
+    width: 11px;
+    height: 11px;
+    margin-right: 11px;
+    background-image: url("assets/image/form/phone.png");
+}
+
+.contact-mail{
+    width: 13px;
+    height: 8px;
+    margin-right: 10px;
+    background-image: url("assets/image/form/mail.png");
+}
+
+.form-line{
+    height: 6px;
+    background-color: #ea676b;
+    width: 1020px;
+    margin: 0 auto;
+}
+
+footer{
+    height: 76px;
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 40px;
+    color: #797b86;
+    font-size: 12px;
+    background-color: #2d303a;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-social a:not(:last-child){
+    margin-right: 8px;    
+}
+
+.footer-social a:hover{
+    filter: sepia(10);
+}
