@@ -162,23 +162,27 @@ form .submit:hover{
 
 .ContactInfo h3{
     font-weight: 900;
+    margin-top: -1px;
     font-size: 18px;
     color: #f0d8d9;
-    margin-bottom: 17px;
+    margin-bottom: 7px;
 }
 
 .ContactInfo h3 + p{
     font-size: 12px;
     line-height: 21.56px;
     font-weight: normal;
+    text-align: justify;
+    word-spacing: -1px;
     color: #f0d8d9;
-    margin-bottom: 30px;
+    margin-bottom: 29px;
 }
 
 .contact-details{
     color: #f0d8d9;
-    line-height: 21.56px;
+    line-height: 12px;
     font-size: 12px;
+    margin-left: 2px;
 }
 
 .contact-details a{
@@ -192,7 +196,11 @@ form .submit:hover{
     color: #ffbbaa;
 }
 
-.contact-details p:not(:last-child){
+.contact-details p:first-child{
+    margin-bottom: 8px;
+}
+
+.contact-details p:nth-child(2){
     margin-bottom: 10px;
 }
 
@@ -201,23 +209,31 @@ form .submit:hover{
 }
 
 .contact-location{
-    width: 7px;
+    width: 13px;
+    background-repeat: no-repeat;
+    background-position: 40% 50%;
+    vertical-align: middle;
     height: 11px;
-    margin-right: 13px;
+    margin-right: 9px;
     background-image: url("assets/image/form/location.png");
 }
 
 .contact-phone{
-    width: 11px;
+    width: 13px;
     height: 11px;
-    margin-right: 11px;
+    margin-right: 9px;
+    background-position: 50% 40%;
+    background-repeat: no-repeat;
     background-image: url("assets/image/form/phone.png");
 }
 
 .contact-mail{
     width: 13px;
-    height: 8px;
-    margin-right: 10px;
+    height: 11px;
+    vertical-align: middle;
+    margin-right: 9px;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
     background-image: url("assets/image/form/mail.png");
 }
 
@@ -242,8 +258,12 @@ footer{
     align-items: center;
 }
 
+footer .copyright{
+    margin-left: 1px;
+}
+
 .footer-social a:not(:last-child){
-    margin-right: 8px;    
+    margin-right: 6px;    
 }
 
 .footer-social a:hover{
