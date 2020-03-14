@@ -69,6 +69,10 @@ body{
 /* Header */
 
 
+header{
+    background-color: #2d303a;
+}
+
 header .container{
     max-width: 940px;
     height: 89px;
@@ -78,7 +82,6 @@ header .container{
     flex-direction: row;
     justify-content: space-between;
     padding: 0 40px;
-    background-color: #2d303a;
 }
 
 .logo h1{
@@ -158,10 +161,10 @@ nav ul li a:hover{
 .slider {
     height: 594px;
     width: 100%;
+    background-color: #f06c64;
 }
 
 .slider .container{
-    background-color: #f06c64;
     max-width: 1020px;
     width: 100%;
     height: 594px;
@@ -212,8 +215,6 @@ button.right{
 
 .slider-line{
     height: 6px;
-    width: 1020px;
-    margin: 0 auto;
     background-color: #ea676b;
 }
 
@@ -224,10 +225,10 @@ button.right{
 .services{
     height: 494px;
     width: 100%;
+    background-color: #f2f2f2;
 }
 
 .services .container{
-    background-color: #f2f2f2;
     max-width: 940px;
     width: 100%;
     height: 380px;
@@ -303,19 +304,20 @@ button.right{
 
 .services-line{
     height: 6px;
-    width: 1020px;
-    margin: 0 auto;
     background-color: #ffffff;
 }
 
 /* Portfolio */
 
 .portfolio{
+    background-color: #2d303a;
+}
+
+.portfolio .container{
     max-width: 940px;
     width: 100%;
     height: 804px;
     margin: 0 auto;
-    background-color: #2d303a;
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 60px;
@@ -427,22 +429,22 @@ button.right{
 
 .portfolio-line{
     height: 6px;
-    width: 1020px;
-    margin: 0 auto;
     background-color: #323746;
 }
 
 
 /* About Us */
 
-
 .about-us{
+    background-color: #f2f2f2;
+}
+
+.about-us .container{
     height: 604px;
     max-width: 940px;
     padding: 62px 40px;
     width: 100%;
     margin: 0 auto;
-    background-color: #f2f2f2;
 }
 
 .three-column-layout{
@@ -513,18 +515,19 @@ button.right{
 }
 
 .about-us-line{
-    width: 1020px;
     height: 6px;
-    margin: 0 auto;
     background-color: #ffffff;
 }
 
 /* Get a quote */
 
 .form{
+    background-color: #f06c64;
+}
+
+.form .container{
     width: 940px;
     padding: 51px 40px 3px;
-    background-color: #f06c64;
     margin: 0 auto;
 }
 
@@ -695,21 +698,21 @@ form .submit:hover{
 .form-line{
     height: 6px;
     background-color: #ea676b;
-    width: 1020px;
-    margin: 0 auto;
 }
 
 /* Footer */
 
-
 footer{
+    background-color: #2d303a;
+}
+
+footer .container{
     height: 76px;
     width: 940px;
     margin: 0 auto;
     padding: 0 40px;
     color: #797b86;
     font-size: 12px;
-    background-color: #2d303a;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
