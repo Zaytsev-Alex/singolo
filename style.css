@@ -161,7 +161,8 @@ nav ul li a:hover{
 .slider {
     height: 594px;
     width: 100%;
-    background-color: #f06c64;
+    background-color: #648BF0;
+    transition: background-color 0.2s ease-out;
 }
 
 .slider .container{
@@ -187,12 +188,14 @@ nav ul li a:hover{
 
 button.left{
     position: absolute;
+    z-index: 10;
     top: 281px;
     left: 42px;
 }
 
 button.right{
     position: absolute;
+    z-index: 10;
     top: 281px;
     right: 40px;
     transform: rotate(180deg);
@@ -213,9 +216,54 @@ button.right{
     position: absolute;
 }
 
+.black-screen{
+    height: 189px;
+    width: 335px;
+    background-color: #000000;
+    position: absolute;
+}
+
+.black-screen-horizontal{
+    top: 187px;
+    left: 484px;
+}
+
+.black-screen-vertical{
+    transform: rotate(90deg);
+    top: 190px;
+    left: 53px;
+}
+
+.slider-content{
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.second-content{
+    position: absolute;
+    top: 0%;
+}
+
+.first-content, .second-content{
+    transform: translateX(0%);
+    transition: transform .2s ease-in-out;
+    will-change: transform;
+}
+
+.slide-to-left{
+    transform: translateX(-100%);
+}
+
+.slide-to-right{
+    transform: translateX(100%);
+}
+
 .slider-line{
     height: 6px;
-    background-color: #ea676b;
+    background-color: #648BF0;
+    transition: background-color 0.2s ease-in-out;
 }
 
 
@@ -425,6 +473,11 @@ button.right{
 
 .four-column-layout li:nth-child(8){
     margin-bottom: 17px;
+}
+
+.portfolio-item-active{
+    box-sizing: border-box;
+    border: 5px solid #f06c64;
 }
 
 .portfolio-line{
@@ -698,6 +751,44 @@ form .submit:hover{
 .form-line{
     height: 6px;
     background-color: #ea676b;
+}
+
+.modal-window{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(240, 108, 100, 0.4);
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal-window-inner{
+    height: 70%;
+    width: 50%;
+    position: relative;
+    background-color: rgba(240, 108, 100, 1);
+    padding: 30px;
+    border-radius: 10px;
+    color: #f0d8d9;
+}
+
+.modal-window-inner h2{
+    text-align: center;
+}
+
+#closeModalWindowButton{
+    position: absolute;
+    bottom: 30px;
+    left: 45%;
+    padding: 10px 40px;
+    background-color: #d6564f;
+    border-color: #d6564f;
+    border-radius: 5px;
+    color: #f0d8d9;
+    font-size: 1.2em;
 }
 
 /* Footer */

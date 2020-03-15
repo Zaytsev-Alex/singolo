@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/image/favicon-32x32.png">
-    <title>Singolo1</title>
+    <title>Singolo</title>
 </head>
 <body>
     <header>
@@ -28,14 +28,23 @@
     <main>
         <section class="slider">
             <div class="container">
-                <button class="left slider-btn">
-                    <img src="assets/image/pointer.png" alt="slider-to-left">
+                <button class="left slider-btn">               
+                    <img src="assets/image/pointer.png" alt="slider-to-left">   
                 </button>
                 <button class="right slider-btn">
                     <img src="assets/image/pointer.png" alt="slider-to-left">
                 </button>
-                <img src="assets/image/iphone.png" class="iphone-vertical" alt="iphone-vertical">
-                <img src="assets/image/iphone-horizontal.png" class="iphone-horizontal" alt="iphone-horizontal">
+                <div class="slider-content">
+                    <div class="first-content">
+                        <img src="assets/image/iphone.png" class="iphone-vertical" alt="iphone-vertical">
+                        <div class="black-screen black-screen-vertical"></div>
+                        <img src="assets/image/iphone-horizontal.png" class="iphone-horizontal" alt="iphone-horizontal">
+                        <div class="black-screen black-screen-horizontal"></div>
+                    </div>
+                    <div class="second-content">
+                        <img src="assets/image/Slider.png" class="second-slide-image" alt="">
+                    </div>
+                </div>
             </div>
         </section>
         <div class="slider-line"></div>
@@ -98,23 +107,23 @@
                 <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
                 <div class="tags-container">
                     <button class="tag tag-selected">All</button>
-                    <button>Web Design</button>
-                    <button>Graphic Design</button>
-                    <button>Artwork</button>
+                    <button class="tag">Web Design</button>
+                    <button class="tag">Graphic Design</button>
+                    <button class="tag">Artwork</button>
                 </div>
-                <ul class="four-column-layout">
-                    <li><img src="assets/image/portfolio/1.jpg" alt="boat"></li>
-                    <li><img src="assets/image/portfolio/2.jpg" alt="beauty-traveler"></li>
-                    <li><img src="assets/image/portfolio/3.jpg" alt="city"></li>
-                    <li><img src="assets/image/portfolio/4.jpg" alt="robot"></li>
-                    <li><img src="assets/image/portfolio/5.jpg" alt="animals"></li>
-                    <li><img src="assets/image/portfolio/6.jpg" alt="industry"></li>
-                    <li><img src="assets/image/portfolio/7.jpg" alt="little robots"></li>
-                    <li><img src="assets/image/portfolio/8.jpg" alt="birds"></li>
-                    <li><img src="assets/image/portfolio/9.jpg" alt="crocodyle"></li>
-                    <li><img src="assets/image/portfolio/10.jpg" alt="words"></li>
-                    <li><img src="assets/image/portfolio/11.jpg" alt="bigfoot"></li>
-                    <li><img src="assets/image/portfolio/12.jpg" alt="letter"></li>
+                <ul class="four-column-layout portfolio-item-container">
+                    <li class="list-item-portfolio"><img src="assets/image/portfolio/1.jpg" alt="boat" class="portfolio-item"></li>
+                    <li class="list-item-portfolio"><img src="assets/image/portfolio/2.jpg" alt="beauty-traveler" class="portfolio-item"></li>
+                    <li class="list-item-portfolio"><img src="assets/image/portfolio/4.jpg" alt="robot" class="portfolio-item"></li>
+                    <li class="list-item-portfolio"><img src="assets/image/portfolio/3.jpg" alt="city" class="portfolio-item"></li>
+                    <li class="list-item-portfolio"><img src="assets/image/portfolio/5.jpg" alt="animals" class="portfolio-item"></li>
+                    <li class="list-item-portfolio"><img src="assets/image/portfolio/6.jpg" alt="industry" class="portfolio-item"></li>
+                    <li class="list-item-portfolio"><img src="assets/image/portfolio/7.jpg" alt="little robots" class="portfolio-item"></li>
+                    <li class="list-item-portfolio"><img src="assets/image/portfolio/8.jpg" alt="birds" class="portfolio-item"></li>
+                    <li class="list-item-portfolio"><img src="assets/image/portfolio/9.jpg" alt="crocodyle" class="portfolio-item"></li>
+                    <li class="list-item-portfolio"><img src="assets/image/portfolio/10.jpg" alt="words" class="portfolio-item"></li>
+                    <li class="list-item-portfolio"><img src="assets/image/portfolio/11.jpg" alt="bigfoot" class="portfolio-item"></li>
+                    <li class="list-item-portfolio"><img src="assets/image/portfolio/12.jpg" alt="letter" class="portfolio-item"></li>
                 </ul>
             </div>
         </section>
@@ -182,7 +191,7 @@
                         <input type="text" placeholder="Name (Required)" name="name" id="name" required>
                         <input type="email" placeholder="Email (Required)" id="email" name="email" required>
                         <input type="text" placeholder="Subject" id="subject" name="subject">
-                        <textarea name="description" id="description" id="" cols="30" placeholder="Describe your project in detail..."></textarea>
+                        <textarea name="description" id="description" cols="30" placeholder="Describe your project in detail..."></textarea>
                         <input type="submit" class="submit" value="Submit">
                     </form>
                     <div class="ContactInfo">
@@ -194,6 +203,14 @@
                             <p><a href="mailto:info@singolo.com"><span class="contact-mail"></span>info@singolo.com</a></p>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="modal-window">
+                <div class="modal-window-inner">
+                    <h2>Письмо отправлено</h2>
+                    <p class="subject-paragraph"></p>
+                    <p class="description-paragraph"></p>
+                    <button id="closeModalWindowButton">Ok</button>
                 </div>
             </div>
         </section>
