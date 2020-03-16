@@ -1,5 +1,18 @@
 /* Fonts */
 
+.left{
+    background: transparent url("assets/image/chev.svg") no-repeat center center;
+}
+
+.right{
+    background: transparent url("assets/image/chev.svg") no-repeat center center;
+    background-color: red;
+}
+
+.pointer-svg{
+    fill: red;
+}
+
 /* lato-300 - latin */
 @font-face {
     font-family: 'Lato';

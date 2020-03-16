@@ -55,32 +55,25 @@ const slider = () => {
     let sliderState = 'second';
     prevArrow.addEventListener('click', () => {
         sliderState = prevSlide(sliderState, firstSlide, secondSlide);
-        if (sliderState == 'first'){
-            document.querySelector('.slider').style.backgroundColor = "#f06c64";
-            document.querySelector('.slider-line').style.backgroundColor = "#f06c64";
-        } else {
-            document.querySelector('.slider').style.backgroundColor = "#648BF0";
-            document.querySelector('.slider-line').style.backgroundColor = "#648BF0";
-        }
     })
     nextArrow.addEventListener('click', () => {
         sliderState = nextSlide(sliderState, firstSlide, secondSlide);
-        if (sliderState == 'first'){
-            document.querySelector('.slider').style.backgroundColor = "#f06c64";
-            document.querySelector('.slider-line').style.backgroundColor = "#f06c64";
-        } else {
-            document.querySelector('.slider').style.backgroundColor = "#648BF0";
-            document.querySelector('.slider-line').style.backgroundColor = "#648BF0";
-        }
     });
 }
 
+var timeOutSlider = 1;
+
 const prevSlide = (sliderState, firstSlide, secondSlide) => {
+    if (!timeOutSlider)
+        return;
+    else
     if (sliderState === 'first'){
         firstSlide.classList.remove('slide-to-left');
         firstSlide.classList.add('slide-to-right');
         secondSlide.classList.remove('slide-to-left');
+        timeOutSlider = 0;
         setTimeout(() => {
+            timeOutSlider = 1;
             firstSlide.classList.remove('slide-to-right');
             firstSlide.classList.add('slide-to-left');
             firstSlide.style.zIndex = -100;
@@ -92,7 +85,9 @@ const prevSlide = (sliderState, firstSlide, secondSlide) => {
         secondSlide.classList.remove('slide-to-left');
         secondSlide.classList.add('slide-to-right');
         firstSlide.classList.remove('slide-to-left')
+        timeOutSlider = 0;
         setTimeout(() => {
+            timeOutSlider = 1;
             secondSlide.classList.remove('slide-to-right');
             secondSlide.classList.add('slide-to-left');
             secondSlide.style.zIndex = -100;
@@ -100,15 +95,27 @@ const prevSlide = (sliderState, firstSlide, secondSlide) => {
         }, 200);    
         sliderState = 'first';
     }
+    if (sliderState == 'first'){
+        document.querySelector('.slider').style.backgroundColor = "#f06c64";
+        document.querySelector('.slider-line').style.backgroundColor = "#f06c64";
+    } else {
+        document.querySelector('.slider').style.backgroundColor = "#648BF0";
+        document.querySelector('.slider-line').style.backgroundColor = "#648BF0";
+    }
     return sliderState;
 }
 
 const nextSlide = (sliderState, firstSlide, secondSlide) => {
+    if (!timeOutSlider)
+        return;
+    else
     if (sliderState === 'first'){
         firstSlide.classList.remove('slide-to-right');
         firstSlide.classList.add('slide-to-left');
         secondSlide.classList.remove('slide-to-right');
+        timeOutSlider = 0;
         setTimeout(() => {
+            timeOutSlider = 1;
             firstSlide.classList.remove('slide-to-left');
             firstSlide.classList.add('slide-to-right');
             firstSlide.style.zIndex = -100;
@@ -120,13 +127,22 @@ const nextSlide = (sliderState, firstSlide, secondSlide) => {
         secondSlide.classList.remove('slide-to-right');
         secondSlide.classList.add('slide-to-left');
         firstSlide.classList.remove('slide-to-right')
+        timeOutSlider = 0;
         setTimeout(() => {
+            timeOutSlider = 1;
             secondSlide.classList.remove('slide-to-left');
             secondSlide.classList.add('slide-to-right');
             secondSlide.style.zIndex = -100;
             firstSlide.style.zIndex = 5;
         }, 200);    
         sliderState = 'first';
+    }
+    if (sliderState == 'first'){
+        document.querySelector('.slider').style.backgroundColor = "#f06c64";
+        document.querySelector('.slider-line').style.backgroundColor = "#f06c64";
+    } else {
+        document.querySelector('.slider').style.backgroundColor = "#648BF0";
+        document.querySelector('.slider-line').style.backgroundColor = "#648BF0";
     }
     return sliderState;
 }
