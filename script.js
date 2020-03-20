@@ -11,10 +11,27 @@ window.onload = () => {
 const navigationHolder = () => {
     document.querySelector('.navigation').addEventListener('click', (event) => {
         if (event.target.classList.contains('nav-item')) {
-            let itemList = document.querySelectorAll('.nav-item');
+            const itemList = document.querySelectorAll('.nav-item');
             removeActiveState(itemList);
-            let targetItem = event.target;
+            const targetItem = event.target;
             addActiveState(targetItem);
+        }
+    });
+    document.addEventListener('scroll', scrollNavigationState);
+}
+
+const scrollNavigationState = () => {
+    const itemList = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('section');
+    const currentPosition = window.scrollY;
+    sections.forEach((element) => {
+        if (element.offsetTop - 300 <= currentPosition && (element.offsetHeight + element.offsetTop) > currentPosition){
+            itemList.forEach((a)=>{
+                a.classList.remove('active');
+                if (element.getAttribute('id') === a.getAttribute('href').slice(1, -7)){
+                    a.classList.add('active');
+                }
+            });
         }
     });
 }
@@ -48,25 +65,30 @@ const horizontalPhoneHolder = () => {
 }
 
 const slider = () => {
-    let prevArrow = document.querySelector('.left');
-    let nextArrow = document.querySelector('.right');
-    let firstSlide = document.querySelector('.first-content');
-    let secondSlide = document.querySelector('.second-content');
+    const prevArrow = document.querySelector('.left');
+    const nextArrow = document.querySelector('.right');
+    const firstSlide = document.querySelector('.first-content');
+    const secondSlide = document.querySelector('.second-content');
     let sliderState = 'second';
     prevArrow.addEventListener('click', () => {
+        next = 1;
         sliderState = prevSlide(sliderState, firstSlide, secondSlide);
     })
     nextArrow.addEventListener('click', () => {
+        prev = 1;
         sliderState = nextSlide(sliderState, firstSlide, secondSlide);
     });
 }
 
 var timeOutSlider = 1;
+var next = 0;
+var prev = 0;
 
 const prevSlide = (sliderState, firstSlide, secondSlide) => {
     if (!timeOutSlider)
         return;
     else
+    corectionSlider(firstSlide, secondSlide);
     if (sliderState === 'first'){
         firstSlide.classList.remove('slide-to-left');
         firstSlide.classList.add('slide-to-right');
@@ -109,6 +131,7 @@ const nextSlide = (sliderState, firstSlide, secondSlide) => {
     if (!timeOutSlider)
         return;
     else
+    corectionSlider(firstSlide, secondSlide);
     if (sliderState === 'first'){
         firstSlide.classList.remove('slide-to-right');
         firstSlide.classList.add('slide-to-left');
@@ -147,13 +170,25 @@ const nextSlide = (sliderState, firstSlide, secondSlide) => {
     return sliderState;
 }
 
+const corectionSlider = (firstSlide, secondSlide) => {
+    console.log(next + ' ' + prev);
+    if (prev === 1 && next === 1){
+        firstSlide.classList.remove('slide-to-right');
+        firstSlide.classList.remove('slide-to-left');
+        secondSlide.classList.remove('slide-to-right');
+        firstSlide.classList.remove('slide-to-left');
+        prev = 0;
+        next = 0;
+    }
+}
+
 const tagsHolder = () => {
     document.querySelector('.tags-container').addEventListener('click', (event) => {
-        if (event.target.classList.contains('tag')){
-            let tags = document.querySelectorAll('.tag');
+        if (event.target.classList.contains('tag') && !event.target.classList.contains('tag-selected')){
+            const tags = document.querySelectorAll('.tag');
             removeSelectedState(tags);
             addSelectedState(event.target);
-            switchPortfolioItems();
+            shufflePortfolioItems();
         }
     });
 }
@@ -168,8 +203,8 @@ const addSelectedState = (targetItem) => {
     targetItem.classList.add('tag-selected');
 }
 
-const switchPortfolioItems = () => {
-    let portfolioItems = document.querySelectorAll('.list-item-portfolio');
+const shufflePortfolioItems = () => {
+    const portfolioItems = document.querySelectorAll('.list-item-portfolio');
     for (let i = 0 ; i < portfolioItems.length-4 ; i++){
         let swap = portfolioItems[i+4].innerHTML;
         portfolioItems[i+4].innerHTML = portfolioItems[i].innerHTML;
@@ -200,26 +235,25 @@ const addPortfolioActiveState = (targetItem) => {
 const submitButtonHolder = () => {
     document.querySelector('.submit').addEventListener('click', (event) => {
         event.preventDefault();    
-        showModalWindow();
+        const regEx = /.+@\w+\.\w{1,8}$/;
+        if (regEx.test(document.getElementById('email').value) && document.querySelector('#name').value){
+            showModalWindow();
+        }
+        else
+            alert('Заполните форму корректно');
     });
 }
 
 const showModalWindow = () => {
-    if (!document.querySelector('#name').value){
-        alert('Заполните поле Name');
-    } else 
-    if (!document.querySelector('#email').value){
-        alert('Заполните поле Email');
-    } else {
         let modalWindow = document.querySelector('.modal-window');
         modalWindow.style.display = 'flex';
-        if (!document.querySelector('#subject').innerHTML){
+        if (document.querySelector('#subject').value){
             document.querySelector('.subject-paragraph').innerHTML = 'Тема: ';
             document.querySelector('.subject-paragraph').innerHTML += document.querySelector('#subject').value;
         } else {
             document.querySelector('.subject-paragraph').innerHTML = 'Без темы';
         }
-        if (!document.querySelector('#description').innerHTML){
+        if (document.querySelector('#description').value){
             document.querySelector('.description-paragraph').innerHTML = 'Описание: ';
             document.querySelector('.description-paragraph').innerHTML += document.querySelector('#description').value;
         } else {
@@ -227,7 +261,6 @@ const showModalWindow = () => {
         }
         clearForm();
         closeModalWindow();
-    }
 }
 
 const closeModalWindow = () => {

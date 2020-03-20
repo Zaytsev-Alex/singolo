@@ -1,13 +1,5 @@
 /* Fonts */
 
-.left{
-    background: transparent url("assets/image/chev.svg") no-repeat center center;
-}
-
-.right{
-    background: transparent url("assets/image/chev.svg") no-repeat center center;
-}
-
 /* lato-300 - latin */
 @font-face {
     font-family: 'Lato';
@@ -67,10 +59,24 @@
     padding: 0;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
+}
+
+.anchor{
+    display: block;
+    position: relative;
+    visibility: hidden;
+}
+
+.anchor:not(:last-child){
+    top: -95px;
 }
 
 
@@ -79,6 +85,11 @@ body{
 
 header{
     background-color: #2d303a;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
 }
 
 header .container{
@@ -182,7 +193,8 @@ nav ul li a:hover{
 }
 
 .slider-btn{
-    background-color: #f06c64;
+    background-color: transparent;
+    background-image: url("assets/image/pointer.png");
     border: 0;
     cursor: pointer;
     width: 16px;
