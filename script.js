@@ -88,7 +88,7 @@ const prevSlide = (sliderState, firstSlide, secondSlide) => {
     if (!timeOutSlider)
         return;
     else
-    corectionSlider(firstSlide, secondSlide);
+        corectionSlider(firstSlide, secondSlide);
     if (sliderState === 'first'){
         firstSlide.classList.remove('slide-to-left');
         firstSlide.classList.add('slide-to-right');
@@ -131,7 +131,7 @@ const nextSlide = (sliderState, firstSlide, secondSlide) => {
     if (!timeOutSlider)
         return;
     else
-    corectionSlider(firstSlide, secondSlide);
+        corectionSlider(firstSlide, secondSlide);
     if (sliderState === 'first'){
         firstSlide.classList.remove('slide-to-right');
         firstSlide.classList.add('slide-to-left');
@@ -171,7 +171,6 @@ const nextSlide = (sliderState, firstSlide, secondSlide) => {
 }
 
 const corectionSlider = (firstSlide, secondSlide) => {
-    console.log(next + ' ' + prev);
     if (prev === 1 && next === 1){
         firstSlide.classList.remove('slide-to-right');
         firstSlide.classList.remove('slide-to-left');
