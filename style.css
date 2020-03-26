@@ -181,10 +181,29 @@ nav ul li a:hover{
 
 .header-line{
     height: 6px;
-    width: 1020px;
-    margin: 0 auto;
+    width: 100%;
     background-color: #323746;
 }
+
+@media screen and (max-width: 1020px){
+header .container{
+    max-width: 768px;
+    height: 89px;
+    width: 100%; 
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+nav{
+    margin-top: 38px;
+    margin-right: 9%;
+}
+
+}
+
 
 
 /* Slider */
@@ -242,7 +261,7 @@ button.right{
 }
 
 .iphone-horizontal{
-    right: 111px;
+    left: 425px;
     top: 174px;    
     width: 484px;
     height: 240px;
@@ -297,6 +316,63 @@ button.right{
     height: 6px;
     background-color: #648BF0;
     transition: background-color 0.2s ease-in-out;
+}
+
+
+@media screen and (max-width: 1020px){
+    .slider {
+        height: 446px;
+    }
+    
+    .slider .container{
+        max-width: 768px;
+        margin: 0 auto;
+        height: 446px;
+    }
+    
+    button.left{
+        top: 215px;
+        left: 25px;
+    }
+    
+    button.right{
+        top: 215px;
+        right: 25px;
+    }
+    
+    .iphone-vertical{
+        margin-top: 45px;
+        margin-left: 100px;
+        width: 181px;
+        height: 364px;
+    }
+    
+    .iphone-horizontal{
+        top: 135px;    
+        left: 315px;
+        width: 364px;
+        height: 181px;
+    }
+    
+    .black-screen{
+        height: 143px;
+        width: 253px;
+    }
+    
+    .black-screen-horizontal{
+        top: 145px;
+        left: 359px;
+    }
+    
+    .black-screen-vertical{
+        top: 148px;
+        left: 55px;
+    }
+
+    .second-slide-image{
+        width: 768px;
+        height: 452;
+    }
 }
 
 
@@ -386,6 +462,24 @@ button.right{
 .services-line{
     height: 6px;
     background-color: #ffffff;
+}
+
+@media screen and (max-width: 1020px){
+    .services{
+        height: 675px;
+    }
+    
+    .services .container{
+        max-width: 688px;
+    }
+
+    .services-conteiner{
+        padding: 0 15px;
+    }
+    
+    .service-item:nth-child(n-3){
+        margin-bottom: 42px;
+    }   
 }
 
 /* Portfolio */
@@ -519,6 +613,35 @@ button.right{
 }
 
 
+@media screen and (max-width: 1020px){
+    .portfolio .container{
+        max-width: 688px;
+        height: 1000px;
+    }
+    
+    .four-column-layout{
+        max-width: 688px;
+        max-height: 790px;
+    }
+    
+    .four-column-layout li img{
+        width: 215px;
+        height: 184px;
+    }
+    
+    .four-column-layout li:not(:nth-child(3n)){
+        margin-right: 20px;
+    }
+
+    .four-column-layout li:nth-child(3n){
+        margin-right: 0;
+    }
+    
+    .four-column-layout li:not(:nth-child(n+8)){
+        margin-bottom: 17px;
+    }
+}
+
 /* About Us */
 
 .about-us{
@@ -527,9 +650,8 @@ button.right{
 
 .about-us .container{
     height: 604px;
-    max-width: 940px;
+    width: 940px;
     padding: 62px 40px;
-    width: 100%;
     margin: 0 auto;
 }
 
@@ -603,6 +725,28 @@ button.right{
 .about-us-line{
     height: 6px;
     background-color: #ffffff;
+}
+
+@media screen and (max-width: 1020px){
+    
+    .about-us .container{
+        width: calc(100% - 80px);
+        margin: 0;
+    }
+
+    .member-image{
+        width: 100%;
+    }
+
+    .member-image img{
+        width: 100%;
+    }
+
+    .about-us__member:not(:last-child){
+        margin-right: 2%;
+    }
+
+    
 }
 
 /* Get a quote */
@@ -824,6 +968,13 @@ form .submit:hover{
     font-size: 1.2em;
 }
 
+@media screen and (max-width: 1020px){
+    .form .container{
+        width: calc(100% - 80px);
+        padding: 60px 40px 30px;
+    }
+}
+
 /* Footer */
 
 footer{
@@ -853,4 +1004,10 @@ footer .copyright{
 
 .footer-social a:hover{
     filter: sepia(10);
+}
+
+@media screen and (max-width: 1020px){
+    footer .container{
+        width: calc(100% - 80px);
+    }
 }

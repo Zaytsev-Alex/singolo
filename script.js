@@ -25,10 +25,10 @@ const scrollNavigationState = () => {
     const sections = document.querySelectorAll('section');
     const currentPosition = window.scrollY;
     sections.forEach((element) => {
-        if (element.offsetTop - 300 <= currentPosition && (element.offsetHeight + element.offsetTop) > currentPosition){
-            itemList.forEach((a)=>{
+        if (element.offsetTop - 300 <= currentPosition && (element.offsetHeight + element.offsetTop) > currentPosition) {
+            itemList.forEach((a) => {
                 a.classList.remove('active');
-                if (element.getAttribute('id') === a.getAttribute('href').slice(1, -7)){
+                if (element.getAttribute('id') === a.getAttribute('href').slice(1, -7)) {
                     a.classList.add('active');
                 }
             });
@@ -61,7 +61,7 @@ const horizontalPhoneHolder = () => {
     });
     document.querySelector('.iphone-horizontal').addEventListener('click', () => {
         document.querySelector('.black-screen-horizontal').classList.toggle('black-screen');
-    });    
+    });
 }
 
 const slider = () => {
@@ -89,7 +89,7 @@ const prevSlide = (sliderState, firstSlide, secondSlide) => {
         return;
     else
         corectionSlider(firstSlide, secondSlide);
-    if (sliderState === 'first'){
+    if (sliderState === 'first') {
         firstSlide.classList.remove('slide-to-left');
         firstSlide.classList.add('slide-to-right');
         secondSlide.classList.remove('slide-to-left');
@@ -100,10 +100,9 @@ const prevSlide = (sliderState, firstSlide, secondSlide) => {
             firstSlide.classList.add('slide-to-left');
             firstSlide.style.zIndex = -100;
             secondSlide.style.zIndex = 5;
-        }, 200);    
-        sliderState = 'second'; 
-    }
-    else {
+        }, 200);
+        sliderState = 'second';
+    } else {
         secondSlide.classList.remove('slide-to-left');
         secondSlide.classList.add('slide-to-right');
         firstSlide.classList.remove('slide-to-left')
@@ -114,10 +113,10 @@ const prevSlide = (sliderState, firstSlide, secondSlide) => {
             secondSlide.classList.add('slide-to-left');
             secondSlide.style.zIndex = -100;
             firstSlide.style.zIndex = 5;
-        }, 200);    
+        }, 200);
         sliderState = 'first';
     }
-    if (sliderState == 'first'){
+    if (sliderState == 'first') {
         document.querySelector('.slider').style.backgroundColor = "#f06c64";
         document.querySelector('.slider-line').style.backgroundColor = "#f06c64";
     } else {
@@ -132,7 +131,7 @@ const nextSlide = (sliderState, firstSlide, secondSlide) => {
         return;
     else
         corectionSlider(firstSlide, secondSlide);
-    if (sliderState === 'first'){
+    if (sliderState === 'first') {
         firstSlide.classList.remove('slide-to-right');
         firstSlide.classList.add('slide-to-left');
         secondSlide.classList.remove('slide-to-right');
@@ -143,10 +142,9 @@ const nextSlide = (sliderState, firstSlide, secondSlide) => {
             firstSlide.classList.add('slide-to-right');
             firstSlide.style.zIndex = -100;
             secondSlide.style.zIndex = 5;
-        }, 200);    
-        sliderState = 'second'; 
-    }
-    else {
+        }, 200);
+        sliderState = 'second';
+    } else {
         secondSlide.classList.remove('slide-to-right');
         secondSlide.classList.add('slide-to-left');
         firstSlide.classList.remove('slide-to-right')
@@ -157,10 +155,10 @@ const nextSlide = (sliderState, firstSlide, secondSlide) => {
             secondSlide.classList.add('slide-to-right');
             secondSlide.style.zIndex = -100;
             firstSlide.style.zIndex = 5;
-        }, 200);    
+        }, 200);
         sliderState = 'first';
     }
-    if (sliderState == 'first'){
+    if (sliderState == 'first') {
         document.querySelector('.slider').style.backgroundColor = "#f06c64";
         document.querySelector('.slider-line').style.backgroundColor = "#f06c64";
     } else {
@@ -171,7 +169,7 @@ const nextSlide = (sliderState, firstSlide, secondSlide) => {
 }
 
 const corectionSlider = (firstSlide, secondSlide) => {
-    if (prev === 1 && next === 1){
+    if (prev === 1 && next === 1) {
         firstSlide.classList.remove('slide-to-right');
         firstSlide.classList.remove('slide-to-left');
         secondSlide.classList.remove('slide-to-right');
@@ -183,7 +181,7 @@ const corectionSlider = (firstSlide, secondSlide) => {
 
 const tagsHolder = () => {
     document.querySelector('.tags-container').addEventListener('click', (event) => {
-        if (event.target.classList.contains('tag') && !event.target.classList.contains('tag-selected')){
+        if (event.target.classList.contains('tag') && !event.target.classList.contains('tag-selected')) {
             const tags = document.querySelectorAll('.tag');
             removeSelectedState(tags);
             addSelectedState(event.target);
@@ -204,16 +202,16 @@ const addSelectedState = (targetItem) => {
 
 const shufflePortfolioItems = () => {
     const portfolioItems = document.querySelectorAll('.list-item-portfolio');
-    for (let i = 0 ; i < portfolioItems.length-4 ; i++){
-        let swap = portfolioItems[i+4].innerHTML;
-        portfolioItems[i+4].innerHTML = portfolioItems[i].innerHTML;
+    for (let i = 0; i < portfolioItems.length - 4; i++) {
+        let swap = portfolioItems[i + 4].innerHTML;
+        portfolioItems[i + 4].innerHTML = portfolioItems[i].innerHTML;
         portfolioItems[i].innerHTML = swap;
     }
 }
 
 const portfolioItemHolder = () => {
     document.querySelector('.portfolio-item-container').addEventListener('click', (event) => {
-        if (event.target.classList.contains('portfolio-item')){
+        if (event.target.classList.contains('portfolio-item')) {
             let portfolioItemList = document.querySelectorAll('.portfolio-item');
             removePortfolioActiveState(portfolioItemList);
             addPortfolioActiveState(event.target);
@@ -233,33 +231,32 @@ const addPortfolioActiveState = (targetItem) => {
 
 const submitButtonHolder = () => {
     document.querySelector('.submit').addEventListener('click', (event) => {
-        event.preventDefault();    
+        event.preventDefault();
         const regEx = /.+@\w+\.\w{1,8}$/;
-        if (regEx.test(document.getElementById('email').value) && document.querySelector('#name').value){
+        if (regEx.test(document.getElementById('email').value) && document.querySelector('#name').value) {
             showModalWindow();
-        }
-        else
+        } else
             alert('Заполните форму корректно');
     });
 }
 
 const showModalWindow = () => {
-        let modalWindow = document.querySelector('.modal-window');
-        modalWindow.style.display = 'flex';
-        if (document.querySelector('#subject').value){
-            document.querySelector('.subject-paragraph').innerHTML = 'Тема: ';
-            document.querySelector('.subject-paragraph').innerHTML += document.querySelector('#subject').value;
-        } else {
-            document.querySelector('.subject-paragraph').innerHTML = 'Без темы';
-        }
-        if (document.querySelector('#description').value){
-            document.querySelector('.description-paragraph').innerHTML = 'Описание: ';
-            document.querySelector('.description-paragraph').innerHTML += document.querySelector('#description').value;
-        } else {
-            document.querySelector('.description-paragraph').innerHTML = 'Без описания';
-        }
-        clearForm();
-        closeModalWindow();
+    let modalWindow = document.querySelector('.modal-window');
+    modalWindow.style.display = 'flex';
+    if (document.querySelector('#subject').value) {
+        document.querySelector('.subject-paragraph').innerHTML = 'Тема: ';
+        document.querySelector('.subject-paragraph').innerHTML += document.querySelector('#subject').value;
+    } else {
+        document.querySelector('.subject-paragraph').innerHTML = 'Без темы';
+    }
+    if (document.querySelector('#description').value) {
+        document.querySelector('.description-paragraph').innerHTML = 'Описание: ';
+        document.querySelector('.description-paragraph').innerHTML += document.querySelector('#description').value;
+    } else {
+        document.querySelector('.description-paragraph').innerHTML = 'Без описания';
+    }
+    clearForm();
+    closeModalWindow();
 }
 
 const closeModalWindow = () => {
