@@ -6,6 +6,7 @@ window.onload = () => {
     tagsHolder();
     portfolioItemHolder();
     submitButtonHolder();
+    menuHolder();
 }
 
 const navigationHolder = () => {
@@ -270,4 +271,44 @@ const clearForm = () => {
     document.querySelector('#email').value = '';
     document.querySelector('#subject').value = '';
     document.querySelector('#description').value = '';
+}
+
+const menuHolder = () => {
+    const burgerMenuButton = document.querySelector('.burger-menu');
+    const navigationBar = document.querySelector('nav');
+    const logo = document.querySelector('.logo');
+    burgerMenuButton.addEventListener('click', () => {
+        if (!navigationBar.classList.contains('navbar-open')) {
+            showMenu(navigationBar, burgerMenuButton, logo);
+        } else {
+            hideMenu(navigationBar, burgerMenuButton, logo);
+        }
+    });
+
+    document.querySelector('.navigation').addEventListener('click', (event) => {
+        if (event.target.classList.contains('nav-item') && document.documentElement.clientWidth < 768) {
+            hideMenu(navigationBar, burgerMenuButton, logo);
+        }
+    });
+
+    document.addEventListener('click', (event) => {
+        if (document.documentElement.clientWidth < 768
+            && navigationBar.classList.contains('navbar-open')
+            && event.target.tagName != 'NAV'
+            && event.target.tagName != 'IMG') {
+            hideMenu(navigationBar, burgerMenuButton, logo);
+        }
+    });
+}
+
+const showMenu = (navigationBar, burgerMenuButton, logo) => {
+    burgerMenuButton.classList.add('burger-menu-rotate');
+    logo.classList.add('logo-fixed');
+    navigationBar.classList.add('navbar-open');
+}
+
+const hideMenu = (navigationBar, burgerMenuButton, logo) => {
+    burgerMenuButton.classList.remove('burger-menu-rotate');
+    navigationBar.classList.remove('navbar-open');
+    logo.classList.remove('logo-fixed');
 }
