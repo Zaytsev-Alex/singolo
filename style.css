@@ -133,6 +133,11 @@ header .container {
   display: none;
 }
 
+.logo {
+  transition: transform 0.3s ease-out;
+  z-index: 100;
+}
+
 .logo h1 {
   font-size: 24px;
   font-weight: 700;
@@ -241,12 +246,7 @@ nav ul li a:hover {
   .logo-fixed {
     position: fixed;
     z-index: 100;
-    top: 3px;
-    left: 100px;
-  }
-
-  .logo-fixed h1 {
-    font-size: 20px;
+    transform: translate3d(-40%, 2%, 0);
   }
 
   nav {
@@ -847,6 +847,7 @@ button.right {
 .four-column-layout li img {
   width: 220px;
   height: 187px;
+  cursor: pointer;
 }
 
 .four-column-layout li:not(:nth-child(4n)) {
